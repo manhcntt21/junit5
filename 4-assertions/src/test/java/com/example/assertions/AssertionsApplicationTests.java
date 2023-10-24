@@ -143,13 +143,18 @@ class AssertionsApplicationTests {
      */
     @Test
     void whenAssertingException_thenThrown() {
-        Throwable exception = assertThrows(
-                IllegalArgumentException.class,
+//        Throwable exception = assertThrows(
+//                IllegalArgumentException.class,
+//                () -> {
+//                    throw new IllegalArgumentException("Exception message");
+//                }
+//        );
+//        assertEquals("Exception message", exception.getMessage());
+
+        assertThrows(IllegalArgumentException.class,
                 () -> {
-                    throw new IllegalArgumentException("Exception message");
-                }
-        );
-        assertEquals("Exception message", exception.getMessage());
+                    throw new IllegalArgumentException("A");
+                }, "A");
     }
 
     /**
